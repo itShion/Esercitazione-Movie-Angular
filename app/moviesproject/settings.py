@@ -36,8 +36,6 @@ INSTALLED_APPS = [
     "django.contrib.messages",
     "django.contrib.staticfiles",
 
-    # NEW 
-    "corsheaders",
 
     # 3d party
     "corsheaders",

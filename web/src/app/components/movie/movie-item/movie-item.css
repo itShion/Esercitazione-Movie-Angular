@@ -1,0 +1,11 @@
+:host {
+    display: flex;
+    width: 100%;
+}
+
+/* NEW */
+.header-section {
+    display: flex;
+    justify-content: space-between;
+   }
+   
