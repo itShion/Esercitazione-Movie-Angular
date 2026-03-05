@@ -1,24 +1,28 @@
 <div class="row">
     <div class="col-12">
         <div id="movies" class="shadow p-4 rounded">
-            <h2 class="fw-bold">Film</h2>
-            <hr />
-            <!-- NEW! -->
+            <div class="d-flex flex-wrap justify-content-between">
+                <h2 class="fw-bold">Film</h2>
+                <button
+                    class="btn btn-success"
+                    data-bs-toggle="modal"
+                    data-bs-target="#addMovieModal">
+                    <span class="fa-solid fa-plus"></span>
+                    Add Movie
+                </button>
+            </div>
             <div class="movie-container">
                 @for(movie of movieList; track $index){
-                <app-movie-item [movie]="movie" (deleteMovieEvent)="onDeleteMovie(movie.id)">
+                    <app-movie-item 
+                    [movie]="movie"
+                    (deleteMovieEvent)="onDeleteMovie(movie.id)">
                 </app-movie-item>
-                }@empty {
-                <p>No movies found</p>
-                }
-
+                } @empty {
+                    <p>No movies found</p>
+                }/
             </div>
-            <!-- -->
         </div>
     </div>
 </div>
 
-<app-movie-modal 
-  [channelList]="channelList()" 
-  (addMovieEvent)="onAddMovie($event)">
-</app-movie-modal>
+<app-movie-modal [channelList]="channelList()"></app-movie-modal>
